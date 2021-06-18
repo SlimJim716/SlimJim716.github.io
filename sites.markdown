@@ -4,4 +4,6 @@ title: "Sites"
 permalink: /sites
 ---
 
-Other Sites
+# Other JJPConnect Sites
+
+## Coming soon!
