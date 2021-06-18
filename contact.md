@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Code"
-permalink: /code
+title: "contact us"
+permalink: /contact
 ---
 
 # Contact
