@@ -6,4 +6,4 @@ permalink: /sites
 
 # Other JJPConnect Sites
 
-## Coming soon!
+# Coming soon!
