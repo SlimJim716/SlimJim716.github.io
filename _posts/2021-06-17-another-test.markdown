@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Welcome to Jekyll - Part 0 - >:("
+title:  "Welcome to Jekyll AHHH"
 date:   2021-06-17 12:00:23 -0500
 categories: jekyll update
 ---
 
-# ANOTHER POST TEST
+# ANOTHER POST TEST - WHY DOESNT IT SHOW UP
 
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
