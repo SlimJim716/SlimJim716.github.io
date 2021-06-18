@@ -28,8 +28,13 @@ github_username:  SlimJim716
 
 # Build settings
 theme: minima
-#plugins:
-#  - jekyll-feed
+plugins:
+  - jekyll-feed
+
+# If you want to link only specific pages in your header, uncomment
+# this and add the path to the pages in order as they should show up
+#header_pages:
+# - about.md
 
 # Exclude from processing.
 # The following items will not be processed, by default.
