@@ -7,6 +7,4 @@ title: Home
 permalink: /
 ---
 
-# Welcome to JJPConnect.com!
-
-Howdy!
+## Welcome to JJPConnect.com!
