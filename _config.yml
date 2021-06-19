@@ -19,7 +19,8 @@
 # in the templates via {{ site.myvariable }}.
 
 title: JJPConnect.com
-email: J.P.
+name: J.P.
+email: email@example.com
 
 show_excerpts: true
 
