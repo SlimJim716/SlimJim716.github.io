@@ -5,16 +5,12 @@ date:   2021-06-18 23:00:00 -0500
 categories: code
 ---
 
-
-## How to use Letsencrypt + Certbot + Cloudflare + NGINX for free, valid, SSL Certs
-
-
 ### Why
 Using this method, you can have valid ssl certs to use on your https websites or apps.  
 They will be signed by `letsencrypt` and should be auto renewed with `certbot`  
 No ports are required to be opened for this since it uses api to modify DNS records. This allows for valid ssl certs to be used by any site, including internal only ones.
 
-
+  
 ### Prerequisites
 This guide assumes you have a few things set up already.
 
@@ -24,7 +20,7 @@ This guide assumes you have a few things set up already.
 * A domain name
 * Your domains DNS records in Cloudflare
 
-
+  
 ### Installing
 We will follow this guide to install certbot with snap (for some reason...) Choose the correct webserver and distro. All steps are outlined below. You must follow these steps on the machine with your web server.  
 [Installing Certbot, for NGINX on Debian 10](https://certbot.eff.org/lets-encrypt/debianbuster-nginx)
@@ -79,7 +75,7 @@ Install the correct plugin for dns challenges. We will use cloudflares
 sudo snap install certbot-dns-cloudflare
 ```
 
-
+  
 ### Setting up Cloudflare credentials
 The cloudflare dns challenge plugin needs credentials to be able to insert a TXT DNS record via cloudflare API.  
 
@@ -100,7 +96,6 @@ You need a token from cloudflare to be able to access their api. From the plugin
 5. Continue to summary -> Create token
 6. Copy your token to paste it into a config file later. The token will not be shown again if you navigate away from the page.
 
-
 #### Create the config file
 Find a suitable place to hold the token config file and use an editor to make a file to paste it in. You could use roots home folder.
 ```
@@ -120,7 +115,7 @@ dns_cloudflare_email = cloudflare@example.com
 dns_cloudflare_api_key = 0123456789abcdef0123456789abcdef01234
 ```
 
-
+  
 ### Run Certbot
 Now that certbot, the Cloudflare DNS plugin, and the config file is in place, we run certbot to get an ssl cert
 
@@ -163,7 +158,7 @@ Once you have ran a command from above, test that certbot will automatically ren
 sudo certbot renew --dry-run
 ```
 
-
+  
 ### Add the certificate to NGINX
 We must use the new certificate on our web-server. This is using NGINX
   
