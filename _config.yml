@@ -22,7 +22,7 @@ title: JJPConnect.com
 author: JP
 email: 
 
-show_excerpts: true
+show_excerpts: false
 
 description: >- # this means to ignore newlines until "baseurl:"
   A home page for all things under the JJPConnect domain.
