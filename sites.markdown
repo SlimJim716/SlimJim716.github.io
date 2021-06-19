@@ -5,5 +5,3 @@ permalink: /sites
 ---
 
 # Coming Soon!
-
-# Other JJPConnect Sites
