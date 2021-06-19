@@ -1,9 +1,12 @@
 ---
 layout: post
-title:  "Obtaining free SSL certificates with Letsencrypt, Certbot and Cloudflare"
+title:  "Obtaining free SSL certificates with Letsencrypt, Certbot, and Cloudflare"
 date:   2021-06-18 23:00:00 -0500
 categories: code
 ---
+
+### Summary
+Maybe you host some services by yourself. Maybe you want your users to feel secure while using your apps? Maybe you just want to see a little green padlock next to your URLs? Either way, this guide will show you step by step how to obtain free SSL certs for your webserver using Letsencrypt, Certbot, and Cloudflare.
 
 ### Why
 Using this method, you can have valid ssl certs to use on your https websites or apps.  
