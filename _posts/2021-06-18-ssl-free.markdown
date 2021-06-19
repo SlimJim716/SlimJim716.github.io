@@ -1,24 +1,24 @@
 ---
 layout: post
-title:  "Obtaining free SSL certificates with Letsencrypt, Certbot, and Cloudflare"
+title:  "How to obtain free SSL certificates with Letsencrypt, Certbot, and Cloudflare"
 date:   2021-06-18 23:00:00 -0500
 categories: code
 ---
 
-### Summary
+## Summary
 Let's say  you host some services by yourself. You should make your services secure right?  
 Maybe you want your users to feel safe while using your apps? Maybe you just want to see a little green padlock next to your URLs?  
 Either way, this guide will show you step by step how to obtain free SSL certs for your webserver using Letsencrypt, Certbot, and Cloudflare.
 
 ***
 
-### Why
+## Why
 Using this method, you can have valid ssl certs to use on your https websites or apps.  
 They will be signed by `letsencrypt` and should be auto renewed with `certbot`  
 No ports are required to be opened for this since it uses api to modify DNS records. This allows for valid ssl certs to be used by any site, including internal only ones.
 
   
-### Prerequisites
+## Prerequisites
 This guide assumes you have a few things set up already.
 
 * A running webserver of any kind
@@ -28,11 +28,11 @@ This guide assumes you have a few things set up already.
 * Your domains DNS records in Cloudflare
 
   
-### Installing
+## Installing
 We will follow this guide to install certbot with snap (for some reason...) Choose the correct webserver and distro. All steps are outlined below. You must follow these steps on the machine with your web server.  
 [Installing Certbot, for NGINX on Debian 10](https://certbot.eff.org/lets-encrypt/debianbuster-nginx)
 
-#### Install Snap
+### Install Snap
 
 Install snap if not installed already. If snap is installed already, you can skip this section. These instructions are for Debian based distros.  
 
@@ -54,7 +54,7 @@ hello-world
 ```
 
 
-#### Install Certbot
+### Install Certbot
 
 Since we need to use the snap version, make sure there are no other versions of certbot installed  
 ```
@@ -83,11 +83,11 @@ sudo snap install certbot-dns-cloudflare
 ```
 
   
-### Setting up Cloudflare credentials
+## Setting up Cloudflare credentials
 The cloudflare dns challenge plugin needs credentials to be able to insert a TXT DNS record via cloudflare API.  
 
 
-#### Generate a Cloudflare token
+### Generate a Cloudflare token
 You need a token from cloudflare to be able to access their api. From the plugin page:
 
 > Use of this plugin requires a configuration file containing Cloudflare API credentials, obtained from your Cloudflare dashboard.  
@@ -103,7 +103,7 @@ You need a token from cloudflare to be able to access their api. From the plugin
 5. Continue to summary -> Create token
 6. Copy your token to paste it into a config file later. The token will not be shown again if you navigate away from the page.
 
-#### Create the config file
+### Create the config file
 Find a suitable place to hold the token config file and use an editor to make a file to paste it in. You could use roots home folder.
 ```
 sudo nano /root/cloudflare.ini
@@ -123,7 +123,7 @@ dns_cloudflare_api_key = 0123456789abcdef0123456789abcdef01234
 ```
 
   
-### Run Certbot
+## Run Certbot
 Now that certbot, the Cloudflare DNS plugin, and the config file is in place, we run certbot to get an ssl cert
 
 To acquire a certificate for example.com
@@ -166,10 +166,10 @@ sudo certbot renew --dry-run
 ```
 
   
-### Add the certificate to NGINX
+## Add the certificate to NGINX
 We must use the new certificate on our web-server. This is using NGINX
   
-#### Make an include file (Optional)
+### Make an include file (Optional)
 It would be easiest to make an includes file so we don't need to retype things all the time.
   
 Make a directory to hold our include files
@@ -190,16 +190,16 @@ ssl_certificate_key  /etc/letsencrypt/live/<domain>/privkey.pem;
 ```
 
 
-#### Include your cert in NGINX servers
+### Include your cert in NGINX servers
 Now that we have our cert, we include it in any virtual servers in NGINX
 
-##### With includes file
+#### With includes file
 In your virtual server, use the include directive to use the conf file we created above. Add this to your server:
 ```
 include /etc/nginx/includes/ssl-cert.conf;
 ```
 
-##### Without includes file
+#### Without includes file
 If you didn't make an includes file, just be sure to include the right NGINX commands. Be sure to change `<domain>` to the domain you got a certificate for.
 ```
 ssl_certificate      /etc/letsencrypt/live/<domain>/fullchain.pem;
