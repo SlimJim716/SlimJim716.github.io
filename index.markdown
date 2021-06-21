@@ -7,4 +7,7 @@ title: Home
 permalink: /
 ---
 
-## Welcome to JJPConnect.com!
+![Space Eddy](/assets/images/cover.png)
+
+### Welcome to JJPConnect.com!
+Use the top menu to browse through the sites categories
