@@ -5,7 +5,7 @@ date:   2021-06-18 23:00:00 -0500
 categories: code
 ---
 
-## Summary
+## Abstract
 Let's say  you host some services by yourself. You should make your services secure right?  
 Maybe you want your users to feel safe while using your apps? Maybe you just want to see a little green padlock next to your URLs?  
 Either way, this guide will show you step by step how to obtain free SSL certs for your webserver using Letsencrypt, Certbot, and Cloudflare.
